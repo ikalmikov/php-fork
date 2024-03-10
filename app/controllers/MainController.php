@@ -6,7 +6,6 @@ use app\models\Post;
 
 class MainController extends Controller
 {
-
     public function homepage()
     {
         $template = $this->twig->load('main/homepage.twig');
@@ -21,6 +20,7 @@ class MainController extends Controller
         //todo create a 404 twig template in app/public/assets/views
         //an example is in app/controllers/UsersController
         //and return it from this method
+        $this->twig->load('404.twig')->render();
     }
 
 }
