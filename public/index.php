@@ -12,12 +12,11 @@ use app\controllers\PostController;
 
 $url = $_SERVER["REQUEST_URI"];
 
+// Initialize Main and Post Controllers
 $main = new MainController();
 $post = new PostController();
+
 //todo add a switch statement router to route based on the url
-
-
-
 switch ($url) {
     //if it is "/posts" return an array of posts via the post controller
     case "/posts":

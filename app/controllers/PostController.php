@@ -15,10 +15,10 @@ class PostController extends Controller
         //the load method will start at the public/assets/views directory
         //you can view the set up in the app/core/Controller class
         $template = $this->twig->load('posts/posts.twig');
-        $homepageData = [
-            'posts' => $poatModel->getAllPosts(),
+        $postData = [
+            'posts' => $postModel->getAllPosts(),
         ];
-        echo $template->render($homepageData);
+        echo $template->render($postData);
     }
 
 
