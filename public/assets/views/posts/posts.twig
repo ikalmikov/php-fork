@@ -7,12 +7,24 @@
     <body>
 
         <div>
-            <h3>Posts</h3>
-            {% for key, value in posts %}
-                id : {{ value.id }}
-                name : {{ value.content }}
-                <br>
+            <h2>Posts</h2>
+            {% for post in posts %}
+                name : {{ post.name }} <br>
+                description : {{ post.description }}
+                <br><br>
             {% endfor %}
+        </div>
+        <div>
+            <h4>Add a New Post</h4>
+            <form method="POST">
+                <label>name</label> <br>
+                <input type="text" name="name">
+                <br><br>
+                <label>description</label> <br>
+                <input type="text" name="description">
+                <br>
+                <input type="submit" value="submit"><br/>
+            </form>
         </div>
 
 

@@ -4,16 +4,28 @@ namespace app\models;
 
 class Post
 {
-    public function getAllPosts() {
-        return [
+    private $posts;
+
+    public function __construct() {
+        $this->$posts = [
             [
                 'id' => '1',
-                'content' => 'Hi, I am Irakli Kalmikov!'
+                'name' => 'Irakli Kalmikov',
+                'description' => 'Hi, I am Irakli Kalmikov!'
             ],
             [
                 'id' => '2',
-                'content' => 'I am a student at Fordham University'
+                'name' => 'Irakli Kalmikov',
+                'description' => 'I am a student at Fordham University'
             ]
         ];
+    }
+
+    public function getAllPosts() {
+        return $this->$posts;
+    }
+
+    public function savePost($newPost){
+        array_push($this->$posts, $newPost);
     }
 }

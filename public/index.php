@@ -20,6 +20,10 @@ $post = new PostController();
 switch ($url) {
     //if it is "/posts" return an array of posts via the post controller
     case "/posts":
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $post->savePost();
+            break;
+        }
         $post->posts();
         break;
     
